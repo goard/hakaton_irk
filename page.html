@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <?!= include("page-css"); ?>
+  </head>
+  <body>
+    
+     <div class="container">
+      
+      <div class="row">
+        <div class="input-field col s8">
+        </div>
+        <div class="input-field col s4" align="right">
+          <img
+          src="https://upload.wikimedia.org/wikipedia/ru/c/c2/%D0%9C%D0%BE%D0%B8_%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B_Logo.svg"
+          width="200" height="120" alt="Slide 1">
+        </div>
+      </div> <!-- CLOSE ROW -->
+      
+      <div class="row">
+        <div class="input-field col s4 ">
+          <input id="fname" type="text" class="validate">
+          <label for="fname">Фамилия</label>
+        </div>
+        <div class="input-field col s4">
+          <input id="uname" type="text" class="validate">
+          <label for="uname">Имя</label>
+        </div>
+        <div class="input-field col s4">
+          <input id="mname" type="text" class="validate">
+          <label for="mname">Отчество</label>
+        </div>
+      </div> <!-- CLOSE ROW -->
+      
+      <div class="row">
+        <div class="input-field col s4">
+          <input id="dateb" type="date" class="validate">
+          <label for="dateb">Дата рождения</label>
+         </div>
+         <div class="input-field col s8">
+            <select id=sex>
+              <option value="" disabled selected>Выберите пункт из списка</option>
+              <option>Мужской</option>
+              <option>Женский</option>
+            </select>
+          <label>Пол</label>
+          </div>
+      </div> <!-- CLOSE ROW -->
+      
+      <div class="row">
+          <div class="input-field col s4">
+            <select id=locality>
+              <option value="" disabled selected>Выберите пункт из списка</option>
+              <option>Город</option>
+              <option>ПГТ</option>
+              <option>Село</option>
+              <option>Деревня</option>
+            </select>
+          <label>Тип населенного пункта</label>
+          </div>
+          <div class="input-field col s8">
+            <input id="registr" type="text" class="validate">
+            <label for="dateb">Место регистрации</label>
+          </div>
+      </div> <!-- CLOSE ROW -->
+      
+      <div class="row">
+          <div class="input-field col s12">
+            <select id=marstatus>
+              <option value="" disabled selected>Выберите пункт из списка</option>
+              <option>Женат/Замужем</option>
+              <option>Холост/Незамужем</option>
+              <option>Вдовец/Вдова</option>
+            </select>
+          <label>Семейное положение</label>
+          </div>
+      </div> <!-- CLOSE ROW -->
+      
+      <div class="row">
+          <div class="input-field col s12">
+            <select id=child>
+              <option value="" disabled selected>Выберите пункт из списка</option>
+              <option>Есть</option>
+              <option>Нет</option>
+            </select>
+          <label>Дети</label>
+          </div>
+      </div> <!-- CLOSE ROW -->
+      
+      <div class="row">
+          <div class="input-field col s12">
+            <select id=service>
+              <option value="" disabled selected>Выберите пункт из списка</option>
+              <option>Услуга №1</option>
+              <option>Услуга №2</option>
+              <option>Услуга №3</option>
+              <option>Услуга №4</option>
+              <option>Услуга №5</option>
+              <option>Услуга №6</option>
+              <option>Услуга №7</option>
+              <option>Услуга №8</option>
+              <option>Услуга №9</option>
+            </select>
+          <label>Выбор госуслуги</label>
+          </div>
+      
+      <div class="row">
+        <a href="#" data-target="slide-out" class="sidenav-trigger">
+        <button id="btn" class="btn waves-effect waves-light  amber darken-2" type="submit" name="action">Готово
+           <i class="material-icons right">add_circle_outline</i>
+        </button>
+        </a>
+      </div>
+    </div> <!-- CLOSE CONTAINER -->
+    
+    <ul id="slide-out" class="sidenav" >
+    <li><div class="user-view">
+      <div class="background">
+        <img src="https://static4.depositphotos.com/1010944/306/v/950/depositphotos_3069042-stock-illustration-abstract-orange-background.jpg">
+      </div>
+      <a href="#user"><img class="circle" src="https://png.pngtree.com/element_our/png_detail/20181026/avatar-vector-icon-woman-vector-symbol-avatar-icon-png_219934.jpg"></a>
+      <a href="#name"><span class="white-text name">Фамилия Имя Отчество</span></a>
+      <a href="#email"><span class="white-text email">mail@mail.com</span></a>
+    </div></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Вариант1</a></li>
+    <li><a href="#!"><i class="material-icons">accessible</i>Услуга №4</a></li>
+    <li><a href="#!"><i class="material-icons">child_friendly</i>Услуга №3</a></li>
+    <li><a href="#!"><i class="material-icons">favorite_border</i>Услуга №7</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Вариант2</a></li>
+    <li><a href="#!"><i class="material-icons">accessible</i>Услуга №4</a></li>
+    <li><a href="#!"><i class="material-icons">child_friendly</i>Услуга №2</a></li>
+    <li><a href="#!"><i class="material-icons">favorite_border</i>Услуга №7</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Вариант3</a></li>
+    <li><a href="#!"><i class="material-icons">accessible</i>Услуга №4</a></li>
+    <li><a href="#!"><i class="material-icons">child_friendly</i>Услуга №2</a></li>
+    <li><a href="#!"><i class="material-icons">account_balance</i>Услуга №8</a></li>
+    </ul>
+          
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <?!= include("page-js"); ?>
+  </body>
+</html>
+
+
+

@@ -1,0 +1,107 @@
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems);
+      
+      var sidenav = document.querySelectorAll('.sidenav');
+      var snav = M.Sidenav.init(sidenav, {
+      edge: 'right',
+      draggable: true,
+      inDuration: 250,
+      outDuration: 200,
+      });
+      });
+    
+    $(document).ready(function(){
+    $('.sidenav').sidenav();
+    });
+       
+    document.getElementById("btn").addEventListener("click", doStuff);
+    $(document).ready(function(){
+    $('.sidenav').sidenav();
+    });
+    function doStuff(){
+      
+      var userInfo = {};
+      var weightInfo = {};
+           
+      userInfo.dateBirth = document.getElementById("dateb").value;
+      userInfo.sex = document.getElementById("sex").value;
+      userInfo.registration = document.getElementById("locality").value;
+      userInfo.marriedStatus = document.getElementById("marstatus").value;
+      userInfo.child = document.getElementById("child").value;
+                  
+      var today = new Date();
+      var birthDate = new Date(document.getElementById("dateb").value);
+      var age = today.getFullYear() - birthDate.getFullYear();
+      var m = today.getMonth() - birthDate.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) 
+      {
+         age--;
+      }
+      age;
+      if (age<14){
+      weightInfo.dateBirth = 1;
+      } else if (age>=14 || age<18){
+      weightInfo.dateBirth = 2;
+      } else if (age>=18 || age<35){
+      weightInfo.dateBirth = 3;
+      } else if (age>=35 || age<63){
+      weightInfo.dateBirth = 3;
+      } else if (age>=63){
+      weightInfo.dateBirth = 4;
+      } else {
+      weightInfo.dateBirth = 0;
+      }
+      if (document.getElementById("sex").value == "Мужской"){
+      weightInfo.sex = 1;
+      } else if (document.getElementById("sex").value == ""){
+      weightInfo.sex = 0;
+      } else {
+      weightInfo.sex = 2;
+      }
+      if (document.getElementById("locality").value == "Город"){
+      weightInfo.registration = 1;
+      } else if (document.getElementById("locality").value == ""){
+      weightInfo.registration = 0;
+      } else {
+      weightInfo.registration = 2;
+      }
+      if (document.getElementById("marstatus").value == "Холост/Незамужем"){
+      weightInfo.marriedStatus = 1;
+      } else if (document.getElementById("marstatus").value == ""){
+      weightInfo.marriedStatus = 0;
+      } else {
+      weightInfo.marriedStatus = 2;
+      }
+      if (document.getElementById("child").value == "Есть"){
+      weightInfo.child = 1;
+      } else if (document.getElementById("child").value == ""){
+      weightInfo.child = 0;
+      } else {
+      weightInfo.child = 2;
+      }
+      google.script.run.userClicked(userInfo);
+      google.script.run.weightClicked(weightInfo);
+      document.getElementById("fname").value = "";
+      document.getElementById("uname").value = "";
+      document.getElementById("mname").value = "";
+      document.getElementById("dateb").value = "";
+      document.getElementById("registr").value = "";
+      var mClear = document.getElementById("sex");
+      mClear.selectedIndex = 0;
+      M.FormSelect.init(mClear);
+      var mClear = document.getElementById("locality");
+      mClear.selectedIndex = 0;
+      M.FormSelect.init(mClear);
+      var mClear = document.getElementById("marstatus");
+      mClear.selectedIndex = 0;
+      M.FormSelect.init(mClear);
+      var mClear = document.getElementById("child");
+      mClear.selectedIndex = 0;
+      M.FormSelect.init(mClear);
+      var mClear = document.getElementById("service");
+      mClear.selectedIndex = 0;
+      M.FormSelect.init(mClear);
+    }
+    </script>
